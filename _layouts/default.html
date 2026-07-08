@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} - Servicios Profesionales</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#10b981', // emerald-500
+                            darkgreen: '#064e3b', // emerald-900
+                            blue: '#0ea5e9', // sky-500
+                            darkblue: '#0c4a6e', // sky-900
+                            accent: '#f59e0b', // amber-500
+                            dark: '#0f172a' // slate-900
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between h-full">
+
+    {% include header.html %}
+
+    <main class="flex-grow">
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+</body>
+</html>

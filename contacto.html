@@ -1,0 +1,135 @@
+---
+layout: default
+title: "Contacto y Cobertura"
+description: "Ponte en contacto con GARCIA LMI&kJ. Agenda una visita física sin costo para cotizar tus trabajos de mantenimiento en Tecámac, Ecatepec y cercanías."
+---
+
+<section class="py-12 sm:py-16 bg-white font-sans">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h1 class="text-3xl font-extrabold text-slate-950">Contacto y Cobertura</h1>
+            <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                Estamos aquí para ayudarte. Ponte en contacto con nosotros o solicita una cotización sin costo para mantenimiento físico.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            <!-- Columna Izquierda: Información y Ubicación -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/60 shadow-sm space-y-6">
+                    <h3 class="font-bold text-slate-900 text-lg">Información de Contacto</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-emerald-100 text-brand-green rounded-xl flex items-center justify-center text-lg shrink-0 mt-0.5">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Línea Principal (WhatsApp)</h4>
+                                <a href="tel:5641251484" class="text-sm text-slate-600 hover:text-brand-green font-semibold">56 4125 1484</a>
+                                <p class="text-[10px] text-slate-500 font-light mt-0.5">Lunes a Sábado: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-sky-100 text-brand-blue rounded-xl flex items-center justify-center text-lg shrink-0 mt-0.5">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Línea Secundaria</h4>
+                                <a href="tel:5643952145" class="text-sm text-slate-600 hover:text-brand-blue font-semibold">56 4395 2145</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-indigo-100 text-indigo-500 rounded-xl flex items-center justify-center text-lg shrink-0 mt-0.5">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Correo Electrónico</h4>
+                                <span class="text-sm text-slate-600">contacto@garcialmikj.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/60 shadow-sm space-y-4">
+                    <h3 class="font-bold text-slate-900 text-lg">Zona de Cobertura Física</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-light">
+                        Atendemos con rapidez en toda el área metropolitana norte del Estado de México. Si tu ubicación no figura en el mapa pero se encuentra cerca de estas zonas, no dudes en consultarnos:
+                    </p>
+                    <div class="grid grid-cols-2 gap-2 text-xs font-bold text-slate-700">
+                        <div class="flex items-center space-x-1.5"><i class="fas fa-check text-brand-green"></i> <span>Ecatepec</span></div>
+                        <div class="flex items-center space-x-1.5"><i class="fas fa-check text-brand-green"></i> <span>Tecámac</span></div>
+                        <div class="flex items-center space-x-1.5"><i class="fas fa-check text-brand-green"></i> <span>Tezoyuca</span></div>
+                        <div class="flex items-center space-x-1.5"><i class="fas fa-check text-brand-green"></i> <span>Acolman</span></div>
+                        <div class="flex items-center space-x-1.5"><i class="fas fa-check text-brand-green"></i> <span>Real Cid</span></div>
+                        <div class="flex items-center space-x-1.5"><i class="fas fa-check text-brand-green"></i> <span>Verona</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Formulario de Contacto -->
+            <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl">
+                <h3 class="font-bold text-slate-900 text-xl mb-6">Envíanos un Mensaje</h3>
+                
+                <form id="contact-form" onsubmit="enviarFormularioContacto(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="contact-name" class="block text-xs font-bold text-slate-700 mb-1.5">Nombre Completo *</label>
+                            <input type="text" id="contact-name" required placeholder="Ej. Juan Pérez" class="w-full p-3 bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-green rounded-xl text-sm focus:outline-none focus:bg-white text-slate-700">
+                        </div>
+                        <div>
+                            <label for="contact-phone" class="block text-xs font-bold text-slate-700 mb-1.5">Teléfono de Contacto *</label>
+                            <input type="tel" id="contact-phone" required placeholder="Ej. 5512345678" class="w-full p-3 bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-green rounded-xl text-sm focus:outline-none focus:bg-white text-slate-700">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="contact-email" class="block text-xs font-bold text-slate-700 mb-1.5">Correo Electrónico (Opcional)</label>
+                        <input type="email" id="contact-email" placeholder="juan@ejemplo.com" class="w-full p-3 bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-green rounded-xl text-sm focus:outline-none focus:bg-white text-slate-700">
+                    </div>
+
+                    <div>
+                        <label for="contact-service" class="block text-xs font-bold text-slate-700 mb-1.5">Servicio de Interés</label>
+                        <select id="contact-service" class="w-full p-3 bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-green rounded-xl text-sm focus:outline-none focus:bg-white text-slate-700">
+                            <option value="jardineria">Jardinería y Paisajismo</option>
+                            <option value="impermeabilizacion">Impermeabilización</option>
+                            <option value="plomeria">Plomería</option>
+                            <option value="herreria">Herrería</option>
+                            <option value="otro">Otro Asunto</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="contact-message" class="block text-xs font-bold text-slate-700 mb-1.5">Mensaje o Detalles del Proyecto *</label>
+                        <textarea id="contact-message" required rows="4" placeholder="Describe brevemente lo que necesitas, ubicación y medidas aproximadas." class="w-full p-3 bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-green rounded-xl text-sm focus:outline-none focus:bg-white text-slate-700"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-slate-950 hover:bg-slate-800 text-white font-bold py-3.5 px-6 rounded-xl text-xs shadow-md transition-all uppercase tracking-wider">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    function enviarFormularioContacto(e) {
+        e.preventDefault();
+        const name = document.getElementById('contact-name').value;
+        const phone = document.getElementById('contact-phone').value;
+        const msg = document.getElementById('contact-message').value;
+        
+        if (name && phone && msg) {
+            showToast(`¡Muchas gracias, ${name}! Hemos recibido tu mensaje. Nos contactaremos pronto.`);
+            document.getElementById('contact-form').reset();
+        } else {
+            showToast('Por favor completa todos los campos requeridos.', false);
+        }
+    }
+</script>

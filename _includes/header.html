@@ -1,0 +1,159 @@
+<!-- Toast -->
+<div id="toast" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-5 sm:bottom-5 sm:max-w-md z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-950 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 pointer-events-none border border-slate-800">
+    <span id="toast-icon" class="text-brand-green text-xl shrink-0"><i class="fas fa-check-circle"></i></span>
+    <span id="toast-message" class="text-xs sm:text-sm font-semibold">¡Operación exitosa!</span>
+</div>
+
+<!-- NAV STICKY -->
+<header class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-14 gap-4">
+            <nav class="hidden lg:flex items-center gap-1">
+                {% for item in site.data.navigation %}
+                  {% if page.url == item.link or (item.link != "/" and page.url contains item.link) %}
+                    {% assign lc = "bg-emerald-500 text-white" %}
+                  {% else %}
+                    {% assign lc = "text-slate-600 hover:bg-emerald-50 hover:text-emerald-700" %}
+                  {% endif %}
+                  <a href="{{ item.link | relative_url }}" id="{{ item.id }}" class="nav-link font-semibold text-xs xl:text-sm px-4 py-2 rounded-lg transition-all {{ lc }}">{{ item.name }}</a>
+                {% endfor %}
+            </nav>
+            <div class="hidden sm:block relative flex-1 max-w-xs lg:max-w-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-search text-slate-300 text-xs"></i></div>
+                <input type="text" id="header-search" oninput="buscarEnTodoElSitio(this.value)" placeholder="Buscar servicio..." class="w-full pl-8 pr-3 py-2 bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-emerald-300 rounded-xl text-xs focus:outline-none transition-all text-slate-600">
+                <div id="search-results" class="hidden absolute top-11 left-0 w-full bg-white border border-slate-200 rounded-xl shadow-xl z-50 overflow-hidden text-xs"></div>
+            </div>
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:5641251484" class="flex items-center gap-1.5 text-emerald-600 font-bold text-xs hover:text-emerald-500 transition-colors whitespace-nowrap"><i class="fas fa-phone-alt text-emerald-400 text-[10px]"></i> 56 4125 1484</a>
+                <a href="tel:5643952145" class="flex items-center gap-1.5 text-slate-400 font-medium text-xs hover:text-emerald-500 transition-colors whitespace-nowrap"><i class="fas fa-phone-alt text-[10px]"></i> 56 4395 2145</a>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Abrir Menú" class="lg:hidden text-slate-500 p-2 rounded-xl hover:bg-slate-100 transition-colors ml-auto">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 shadow-inner">
+        <div class="px-4 pt-3 pb-6 space-y-1">
+            <div class="relative w-full mb-3">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-search text-slate-300 text-xs"></i></div>
+                <input type="text" id="mobile-search" oninput="buscarEnTodoElSitio(this.value)" placeholder="Buscar servicio..." class="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-green rounded-xl text-xs focus:outline-none focus:bg-white transition-all text-slate-600">
+                <div id="mobile-search-results" class="hidden absolute top-12 left-0 w-full bg-white border border-slate-200 rounded-xl shadow-xl z-50 overflow-hidden text-xs"></div>
+            </div>
+            {% for item in site.data.navigation %}
+              {% if page.url == item.link or (item.link != "/" and page.url contains item.link) %}
+                {% assign mc = "bg-emerald-50 text-emerald-600 border-l-4 border-emerald-500" %}
+              {% else %}
+                {% assign mc = "text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 border-l-4 border-transparent" %}
+              {% endif %}
+              <a href="{{ item.link | relative_url }}" class="block mobile-nav-link px-4 py-3 rounded-r-xl font-bold text-sm transition-all {{ mc }}">{{ item.name }}</a>
+            {% endfor %}
+            <div class="pt-4 border-t border-slate-100 grid grid-cols-2 gap-2 mt-2">
+                <a href="tel:5641251484" class="flex items-center justify-center gap-2 bg-emerald-500 text-white py-3 rounded-xl font-bold text-xs shadow hover:bg-emerald-600 transition-colors"><i class="fas fa-phone-alt"></i> 56 4125 1484</a>
+                <a href="tel:5643952145" class="flex items-center justify-center gap-2 bg-slate-100 text-slate-700 py-3 rounded-xl font-bold text-xs hover:bg-slate-200 transition-colors"><i class="fas fa-phone-alt"></i> 56 4395 2145</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     BANNER RÚSTICO PROFESIONAL CON LOGO
+═══════════════════════════════════════════ -->
+<div style="position:relative;width:100%;min-height:380px;overflow:hidden;">
+
+    <!-- Fondo: café terroso + verde oliva oscuro -->
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg, #2c1a0e 0%, #4a3220 25%, #3d5225 50%, #4a3220 75%, #2c1a0e 100%);"></div>
+
+    <!-- Textura SVG: veta de madera / piedra rugosa -->
+    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;" viewBox="0 0 800 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <!-- Vetas de madera horizontales -->
+        <path d="M0 30 Q200 22 400 32 Q600 42 800 28" stroke="#a07850" stroke-width="1.5" fill="none"/>
+        <path d="M0 60 Q150 68 400 58 Q600 48 800 65" stroke="#8b6840" stroke-width="1" fill="none"/>
+        <path d="M0 95 Q250 88 500 98 Q700 108 800 92" stroke="#a07850" stroke-width="2" fill="none"/>
+        <path d="M0 128 Q200 138 400 125 Q650 112 800 130" stroke="#7a5830" stroke-width="1" fill="none"/>
+        <path d="M0 162 Q300 155 500 168 Q700 178 800 160" stroke="#a07850" stroke-width="1.5" fill="none"/>
+        <path d="M0 195 Q150 205 400 192 Q600 180 800 198" stroke="#8b6840" stroke-width="1" fill="none"/>
+        <path d="M0 228 Q250 220 500 232 Q700 240 800 225" stroke="#a07850" stroke-width="2" fill="none"/>
+        <!-- Nudos de madera -->
+        <ellipse cx="120" cy="80" rx="28" ry="18" stroke="#7a5830" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <ellipse cx="680" cy="170" rx="22" ry="14" stroke="#7a5830" stroke-width="1.5" fill="none" opacity="0.5"/>
+    </svg>
+
+    <!-- Overlay: capa de musgo/hierba en la base -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(to top,rgba(20,83,45,0.4),transparent);"></div>
+
+    <!-- Overlay: brillo central suave para que el logo resalte -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(255,255,255,0.15) 0%,transparent 70%);"></div>
+
+    <!-- Hojas decorativas izquierda (silueta) -->
+    <svg style="position:absolute;left:0;bottom:0;width:clamp(70px,15vw,230px);height:auto;pointer-events:none;opacity:0.9;" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 280 Q34 205 50 155 Q62 118 77 75" stroke="#4ade80" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M77 75 Q35 52 12 8 Q50 36 77 75Z" fill="#22c55e" opacity="0.95"/>
+        <path d="M63 142 Q22 124 4 92 Q40 112 63 142Z" fill="#16a34a" opacity="0.85"/>
+        <path d="M47 198 Q10 182 0 155 Q28 172 47 198Z" fill="#4ade80" opacity="0.8"/>
+        <path d="M92 280 Q97 232 108 198 Q120 168 140 145" stroke="#86efac" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M140 145 Q114 122 92 90 Q118 118 140 145Z" fill="#4ade80" opacity="0.75"/>
+        <path d="M118 192 Q94 175 76 148 Q102 166 118 192Z" fill="#22c55e" opacity="0.7"/>
+        <path d="M162 280 Q155 225 142 185 Q130 158 108 120" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M108 120 Q150 112 172 80 Q148 110 108 120Z" fill="#bbf7d0" opacity="0.9"/>
+        <!-- Pasto base -->
+        <path d="M0 280 Q7 258 12 270 Q17 250 22 268 Q28 248 35 268 Q42 250 49 272 Q57 252 64 275" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+
+    <!-- Hojas decorativas derecha (espejo) -->
+    <svg style="position:absolute;right:0;bottom:0;width:clamp(70px,15vw,230px);height:auto;pointer-events:none;opacity:0.9;transform:scaleX(-1);" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 280 Q34 205 50 155 Q62 118 77 75" stroke="#4ade80" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M77 75 Q35 52 12 8 Q50 36 77 75Z" fill="#22c55e" opacity="0.95"/>
+        <path d="M63 142 Q22 124 4 92 Q40 112 63 142Z" fill="#16a34a" opacity="0.85"/>
+        <path d="M47 198 Q10 182 0 155 Q28 172 47 198Z" fill="#4ade80" opacity="0.8"/>
+        <path d="M92 280 Q97 232 108 198 Q120 168 140 145" stroke="#86efac" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M140 145 Q114 122 92 90 Q118 118 140 145Z" fill="#4ade80" opacity="0.75"/>
+        <path d="M118 192 Q94 175 76 148 Q102 166 118 192Z" fill="#22c55e" opacity="0.7"/>
+        <path d="M162 280 Q155 225 142 185 Q130 158 108 120" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M108 120 Q150 112 172 80 Q148 110 108 120Z" fill="#bbf7d0" opacity="0.9"/>
+        <path d="M0 280 Q7 258 12 270 Q17 250 22 268 Q28 248 35 268 Q42 250 49 272 Q57 252 64 275" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+
+    <!-- Tuberías decorativas sutiles (plomería) -->
+    <svg style="position:absolute;left:clamp(70px,16vw,235px);bottom:0;width:50px;height:80px;pointer-events:none;opacity:0.25;" viewBox="0 0 50 80">
+        <rect x="18" y="0" width="14" height="80" rx="7" fill="#94a3b8"/>
+        <rect x="10" y="30" width="30" height="12" rx="6" fill="#64748b"/>
+    </svg>
+    <svg style="position:absolute;right:clamp(70px,16vw,235px);bottom:0;width:50px;height:80px;pointer-events:none;opacity:0.25;transform:scaleX(-1);" viewBox="0 0 50 80">
+        <rect x="18" y="0" width="14" height="80" rx="7" fill="#94a3b8"/>
+        <rect x="10" y="30" width="30" height="12" rx="6" fill="#64748b"/>
+    </svg>
+
+    <!-- Logo y Título -->
+    <div style="position:relative;z-index:10;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:30px clamp(68px,17vw,240px) 80px;text-align:center;">
+        <a href="{{ '/' | relative_url }}" style="display:block;width:100%;max-width:480px;transition:transform 0.3s;" class="hover:scale-105">
+            <img src="{{ '/img/logo.webp' | relative_url }}"
+                 alt="GARCIA LMI&kJ"
+                 width="480" height="300"
+                 loading="eager"
+                 style="display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(0,0,0,0.4));">
+        </a>
+        <h1 style="margin-top:20px;font-size:clamp(1.5rem, 3vw, 2.5rem);font-weight:900;color:#f8fafc;text-transform:uppercase;letter-spacing:1px;text-shadow:2px 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(74,222,128,0.4);font-family:'Poppins', sans-serif;">
+            Especialistas en Jardinería y Mantenimiento
+        </h1>
+    </div>
+
+    <!-- Pasto base corrido -->
+    <svg style="position:relative;z-index:5;width:100%;height:28px;display:block;margin-top:-6px;" viewBox="0 0 1440 28" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 28 Q62 16 65 22 Q68 10 71 21 Q74 14 77 26" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+        <path d="M160 28 Q163 14 167 20 Q170 8 174 19 Q178 12 181 26" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+        <path d="M300 28 Q303 13 307 19 Q311 6 315 18 Q319 11 322 25" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+        <path d="M460 28 Q462 14 466 20 Q469 8 473 19 Q476 13 479 25" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M610 28 Q613 11 618 17 Q622 4 626 16 Q630 9 633 25" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M750 28 Q753 13 757 19 Q761 7 765 19 Q769 12 772 26" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+        <path d="M900 28 Q902 12 906 18 Q910 5 914 17 Q918 10 921 25" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+        <path d="M1060 28 Q1063 14 1067 20 Q1070 8 1074 19 Q1078 13 1081 25" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M1220 28 Q1223 12 1227 18 Q1231 5 1235 17 Q1239 10 1242 25" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+        <path d="M1380 28 Q1383 14 1387 20 Q1391 7 1395 19 Q1399 12 1402 26" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 22 Q360 16 720 22 Q1080 28 1440 20 L1440 28 L0 28Z" fill="#14532d" opacity="0.7"/>
+    </svg>
+
+    <!-- Ola blanca de cierre -->
+    <svg style="width:100%;height:18px;display:block;margin-top:-2px;" viewBox="0 0 1440 18" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,9 C360,18 1080,0 1440,9 L1440,18 L0,18 Z" fill="#ffffff"/>
+    </svg>
+</div>

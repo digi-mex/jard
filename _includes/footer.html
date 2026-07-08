@@ -1,0 +1,212 @@
+<!-- Pie de Página Premium -->
+<footer style="background: linear-gradient(160deg, #f5e6d0 0%, #ede0c8 50%, #e8d5b0 100%); border-top: 3px solid #c8935a;" class="text-stone-800 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 font-sans">
+            
+            <!-- Columna 1: Info e Identidad -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-xl overflow-hidden bg-white p-0.5 flex items-center justify-center border-2 border-amber-600/40 shadow-md">
+                        <img src="{{ '/img/logo.webp' | relative_url }}" alt="GARCIA LMI&kJ Logo" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <span class="text-lg font-black tracking-wider text-stone-900">
+                        GARCIA <span style="color:#2d7a3a;">LMI&kJ</span>
+                    </span>
+                </div>
+                <p class="text-sm text-stone-700 leading-relaxed">
+                    Soluciones integrales de mantenimiento residencial y comercial en Ecatepec, Tecámac y alrededores.
+                </p>
+                <div class="flex space-x-3">
+                    <a href="https://facebook.com" class="w-9 h-9 rounded-lg flex items-center justify-center text-sm hover:scale-110 transition-all text-white shadow-md" style="background:#1877f2;" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" class="w-9 h-9 rounded-lg flex items-center justify-center text-sm hover:scale-110 transition-all text-white shadow-md" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/525641251484" class="w-9 h-9 rounded-lg flex items-center justify-center text-sm hover:scale-110 transition-all text-white shadow-md" style="background:#25d366;" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider mb-4" style="color:#7c4a1a; border-bottom: 2px solid #c8935a; padding-bottom: 8px;">
+                    <i class="fas fa-link mr-2 text-xs"></i>Enlaces Rápidos
+                </h4>
+                <ul class="space-y-3 text-sm text-stone-700">
+                    {% for item in site.data.navigation %}
+                      <li>
+                        <a href="{{ item.link | relative_url }}" class="flex items-center gap-2 hover:text-emerald-700 transition-colors font-medium">
+                            <i class="fas fa-chevron-right text-amber-600 text-xs"></i>{{ item.name }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Columna 3: Servicios Principales -->
+            <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider mb-4" style="color:#7c4a1a; border-bottom: 2px solid #c8935a; padding-bottom: 8px;">
+                    <i class="fas fa-tools mr-2 text-xs"></i>Servicios
+                </h4>
+                <ul class="space-y-3 text-sm text-stone-700">
+                    <li>
+                        <a href="{{ '/servicios/jardineria.html' | relative_url }}" class="flex items-center gap-2 hover:text-emerald-700 transition-colors font-medium">
+                            <i class="fas fa-seedling text-emerald-600 text-xs"></i>Jardinería y Paisajismo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ '/servicios/impermeabilizacion.html' | relative_url }}" class="flex items-center gap-2 hover:text-emerald-700 transition-colors font-medium">
+                            <i class="fas fa-tint-slash text-sky-600 text-xs"></i>Impermeabilización
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ '/servicios/plomeria.html' | relative_url }}" class="flex items-center gap-2 hover:text-emerald-700 transition-colors font-medium">
+                            <i class="fas fa-faucet text-indigo-600 text-xs"></i>Plomería Residencial
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ '/servicios/herreria.html' | relative_url }}" class="flex items-center gap-2 hover:text-emerald-700 transition-colors font-medium">
+                            <i class="fas fa-hammer text-amber-700 text-xs"></i>Herrería Estructural
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Ubicación y Contacto -->
+            <div>
+                <h4 class="font-extrabold text-sm uppercase tracking-wider mb-4" style="color:#7c4a1a; border-bottom: 2px solid #c8935a; padding-bottom: 8px;">
+                    <i class="fas fa-map-marked-alt mr-2 text-xs"></i>Contacto
+                </h4>
+                <ul class="space-y-3 text-sm text-stone-700">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-emerald-700 mt-1 shrink-0"></i>
+                        <span class="font-medium">Tecámac, Ecatepec, Tezoyuca, Acolman y zonas aledañas.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-emerald-700 shrink-0"></i>
+                        <a href="tel:5641251484" class="font-bold hover:text-emerald-700 transition-colors">56 4125 1484</a>
+                        <span class="text-xs text-stone-500">(Principal)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-emerald-700 shrink-0"></i>
+                        <a href="tel:5643952145" class="font-bold hover:text-emerald-700 transition-colors">56 4395 2145</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-emerald-700 shrink-0"></i>
+                        <span class="font-medium break-all">contacto@garcialmikj.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Barra inferior -->
+        <div class="pt-6 text-sm text-stone-600 flex flex-col sm:flex-row justify-between items-center gap-3 font-sans" style="border-top: 1px solid #c8935a80;">
+            <p class="font-medium">
+                &copy; 2026 &mdash; Realizado por
+                <a href="https://digi-mex.com" target="_blank" rel="noopener noreferrer" class="font-bold hover:text-emerald-700 transition-colors" style="color:#7c4a1a;">Digi-mex</a>
+                &mdash; Todos los derechos reservados.
+            </p>
+            <a href="{{ '/aviso-privacidad.html' | relative_url }}" class="font-semibold hover:text-emerald-700 transition-colors underline underline-offset-2" style="color:#7c4a1a;">
+                <i class="fas fa-shield-alt mr-1"></i>Aviso de Privacidad
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- Botón de WhatsApp Flotante -->
+<a href="https://wa.me/525641251484?text=Hola,%20quisiera%20solicitar%20un%20presupuesto." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-emerald-500 text-slate-950 p-4 rounded-full shadow-2xl hover:bg-emerald-400 transition-all hover:scale-105 flex items-center justify-center text-2xl w-14 h-14">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Lógica JavaScript Común -->
+<script>
+    // Configuración de Servicios para el Buscador
+    const services = [
+      { name: 'Jardinería y Paisajismo', link: '{{ "/servicios/jardineria.html" | relative_url }}', desc: 'Poda estética, pasto natural alfombra y diseño de áreas verdes' },
+      { name: 'Impermeabilización Profesional', link: '{{ "/servicios/impermeabilizacion.html" | relative_url }}', desc: 'Sellado de grietas estructurales, pintura térmica y malla' },
+      { name: 'Plomería Residencial e Industrial', link: '{{ "/servicios/plomeria.html" | relative_url }}', desc: 'Fugas, lavado de tinacos, cisternas, bombas e hidroneumáticos' },
+      { name: 'Herrería Estructural y Soldadura', link: '{{ "/servicios/herreria.html" | relative_url }}', desc: 'Portones, protecciones, barandales y soldadura rápida a domicilio' }
+    ];
+
+    // Función del Buscador
+    function buscarEnTodoElSitio(query) {
+        const resultsDiv = document.getElementById('search-results');
+        const mobileResultsDiv = document.getElementById('mobile-search-results');
+        
+        const q = query.trim().toLowerCase();
+        if (!q) {
+            resultsDiv.classList.add('hidden');
+            if (mobileResultsDiv) mobileResultsDiv.classList.add('hidden');
+            return;
+        }
+        
+        const filtered = services.filter(s => s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q));
+        
+        let html = '';
+        if (filtered.length === 0) {
+            html = '<div class="p-3 text-slate-500">No se encontraron resultados</div>';
+        } else {
+            filtered.forEach(s => {
+                html += `<a href="${s.link}" class="block p-3 hover:bg-slate-100 border-b border-slate-100 last:border-0 text-slate-800">
+                    <div class="font-bold">${s.name}</div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">${s.desc}</div>
+                </a>`;
+            });
+        }
+        
+        resultsDiv.innerHTML = html;
+        resultsDiv.classList.remove('hidden');
+        
+        if (mobileResultsDiv) {
+            mobileResultsDiv.innerHTML = html;
+            mobileResultsDiv.classList.remove('hidden');
+        }
+    }
+
+    // Cerrar resultados al hacer clic fuera
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('#header-search') && !e.target.closest('#search-results')) {
+            document.getElementById('search-results').classList.add('hidden');
+        }
+        const mobileSearch = document.getElementById('mobile-search');
+        const mobileResults = document.getElementById('mobile-search-results');
+        if (mobileSearch && mobileResults && !e.target.closest('#mobile-search') && !e.target.closest('#mobile-search-results')) {
+            mobileResults.classList.add('hidden');
+        }
+    });
+
+    // Control del Menú Móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+    }
+
+    // Mostrar Notificación Flotante (Toast)
+    function showToast(message, success = true) {
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-message');
+        const toastIcon = document.getElementById('toast-icon');
+        
+        toastMsg.innerText = message;
+        if (success) {
+            toastIcon.innerHTML = '<i class="fas fa-check-circle text-brand-green"></i>';
+        } else {
+            toastIcon.innerHTML = '<i class="fas fa-exclamation-circle text-red-500"></i>';
+        }
+        
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        
+        setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-20', 'opacity-0');
+        }, 4000);
+    }
+</script>

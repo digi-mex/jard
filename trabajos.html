@@ -1,0 +1,144 @@
+---
+layout: default
+title: "Trabajos Realizados"
+description: "Galería de proyectos reales de jardinería, impermeabilizaciones y mantenimiento general realizados con éxito."
+---
+
+<section class="py-12 sm:py-16 bg-slate-50 text-slate-800 font-sans min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Evidencia Gráfica</h2>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950 mt-1">Nuestra Galería de Trabajos</h3>
+            <p class="text-slate-600 text-xs sm:text-sm mt-2">Explora los proyectos reales entregados con éxito en Tecámac, Ecatepec y fraccionamientos vecinos.</p>
+        </div>
+
+        <!-- Botones de Filtrado de Galería con soporte táctil -->
+        <div class="flex overflow-x-auto sm:overflow-x-visible pb-4 sm:pb-0 justify-start sm:justify-center gap-2 mb-8 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+            <button onclick="filtrarGaleria('todos')" data-filter="todos" class="filter-btn active shrink-0 bg-emerald-600 text-white px-5 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md">Todos</button>
+            <button onclick="filtrarGaleria('jardineria')" data-filter="jardineria" class="filter-btn shrink-0 bg-white text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl text-xs font-bold transition-all">Jardinería</button>
+            <button onclick="filtrarGaleria('impermeabilizacion')" data-filter="impermeabilizacion" class="filter-btn shrink-0 bg-white text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl text-xs font-bold transition-all">Impermeabilización</button>
+            <button onclick="filtrarGaleria('plomeria')" data-filter="plomeria" class="filter-btn shrink-0 bg-white text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl text-xs font-bold transition-all">Plomería</button>
+            <button onclick="filtrarGaleria('herreria')" data-filter="herreria" class="filter-btn shrink-0 bg-white text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl text-xs font-bold transition-all">Herrería</button>
+        </div>
+
+        <!-- Grid de Galería -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galeria-container">
+            
+            <!-- Trabajo 1 -->
+            <div class="galeria-item bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200/80 transition-all duration-300" data-category="jardineria">
+                <div class="h-48 sm:h-56 bg-slate-100 relative overflow-hidden">
+                    <img src="{{ '/img/jardineria/1.webp' | relative_url }}" alt="Arreglo de jardín premium" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" onerror="this.src='https://placehold.co/600x400/10b981/ffffff?text=Arreglo+de+Jardin'">
+                    <span class="absolute top-3 left-3 bg-brand-green text-slate-950 font-extrabold text-[9px] sm:text-[10px] px-2.5 py-1 rounded-full uppercase">Jardinería</span>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Arreglo Paisajista Residencial</h5>
+                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1"><i class="fas fa-map-marker-alt text-rose-500 mr-1"></i>Fraccionamiento Real Cid</p>
+                    <p class="text-xs text-slate-600 mt-2 font-light">Colocación de pasto natural nivelado en rollo y arreglo completo de parterres florales ornamentales.</p>
+                </div>
+            </div>
+
+            <!-- Trabajo 2 -->
+            <div class="galeria-item bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200/80 transition-all duration-300" data-category="impermeabilizacion">
+                <div class="h-48 sm:h-56 bg-slate-100 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Losa impermeabilizada" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" onerror="this.src='https://placehold.co/600x400/0ea5e9/ffffff?text=Impermeabilizacion'">
+                    <span class="absolute top-3 left-3 bg-brand-blue text-white font-extrabold text-[9px] sm:text-[10px] px-2.5 py-1 rounded-full uppercase">Impermeabilización</span>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Impermeabilización Acrílica Térmica</h5>
+                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1"><i class="fas fa-map-marker-alt text-rose-500 mr-1"></i>Fraccionamiento Verona</p>
+                    <p class="text-xs text-slate-600 mt-2 font-light">Aplicación de acrílico blanco reflectante térmico de alta durabilidad, sellador de grietas y malla estructural.</p>
+                </div>
+            </div>
+
+            <!-- Trabajo 3 -->
+            <div class="galeria-item bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200/80 transition-all duration-300" data-category="herreria">
+                <div class="h-48 sm:h-56 bg-slate-100 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80" alt="Portón moderno" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" onerror="this.src='https://placehold.co/600x400/f59e0b/ffffff?text=Porton+de+Herreria'">
+                    <span class="absolute top-3 left-3 bg-brand-accent text-slate-950 font-extrabold text-[9px] sm:text-[10px] px-2.5 py-1 rounded-full uppercase">Herrería</span>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Portón Metálico Reforzado</h5>
+                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1"><i class="fas fa-map-marker-alt text-rose-500 mr-1"></i>Héroes Tecámac Secc. Bosques</p>
+                    <p class="text-xs text-slate-600 mt-2 font-light">Fabricación de portón moderno contemporáneo con pintura esmalte anticorrosiva de secado rápido.</p>
+                </div>
+            </div>
+
+            <!-- Trabajo 4 (Jardinería Extra) -->
+            <div class="galeria-item bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200/80 transition-all duration-300" data-category="jardineria">
+                <div class="h-48 sm:h-56 bg-slate-100 relative overflow-hidden">
+                    <img src="{{ '/img/jardineria/2.webp' | relative_url }}" alt="Poda estética" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" onerror="this.src='https://placehold.co/600x400/10b981/ffffff?text=Poda+Estetica'">
+                    <span class="absolute top-3 left-3 bg-brand-green text-slate-950 font-extrabold text-[9px] sm:text-[10px] px-2.5 py-1 rounded-full uppercase">Jardinería</span>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Poda Estética y Control de Altura</h5>
+                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1"><i class="fas fa-map-marker-alt text-rose-500 mr-1"></i>Ecatepec Centro</p>
+                    <p class="text-xs text-slate-600 mt-2 font-light">Mantenimiento de setos perimetrales y rebaje de copas de árboles para seguridad vial y domiciliaria.</p>
+                </div>
+            </div>
+
+            <!-- Trabajo 5 (Jardinería Extra) -->
+            <div class="galeria-item bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200/80 transition-all duration-300" data-category="jardineria">
+                <div class="h-48 sm:h-56 bg-slate-100 relative overflow-hidden">
+                    <img src="{{ '/img/jardineria/3.webp' | relative_url }}" alt="Diseño de paisaje" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" onerror="this.src='https://placehold.co/600x400/10b981/ffffff?text=Diseno+Paisaje'">
+                    <span class="absolute top-3 left-3 bg-brand-green text-slate-950 font-extrabold text-[9px] sm:text-[10px] px-2.5 py-1 rounded-full uppercase">Jardinería</span>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Diseño de Paisaje Floral</h5>
+                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1"><i class="fas fa-map-marker-alt text-rose-500 mr-1"></i>Fraccionamiento Santa Elena</p>
+                    <p class="text-xs text-slate-600 mt-2 font-light">Diseño e integración de plantas florales de sol y sombra con gravilla decorativa de mármol.</p>
+                </div>
+            </div>
+
+            <!-- Trabajo 6 (Plomería Extra) -->
+            <div class="galeria-item bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200/80 transition-all duration-300" data-category="plomeria">
+                <div class="h-48 sm:h-56 bg-slate-100 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Lavado de tinaco" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" onerror="this.src='https://placehold.co/600x400/6366f1/ffffff?text=Lavado+de+Tinaco'">
+                    <span class="absolute top-3 left-3 bg-indigo-500 text-white font-extrabold text-[9px] sm:text-[10px] px-2.5 py-1 rounded-full uppercase">Plomería</span>
+                </div>
+                <div class="p-5 sm:p-6">
+                    <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1">Limpieza y Desinfección de Cisternas</h5>
+                    <p class="text-[10px] sm:text-xs text-slate-500 mb-1"><i class="fas fa-map-marker-alt text-rose-500 mr-1"></i>Héroes Tecámac Secc. Jardines</p>
+                    <p class="text-xs text-slate-600 mt-2 font-light">Lavado a presión con aplicación de hipoclorito de sodio para desinfección total de agua residencial.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    // Filtrar Galería Interactiva
+    function filtrarGaleria(category) {
+        const items = document.querySelectorAll('.galeria-item');
+        const buttons = document.querySelectorAll('.filter-btn');
+        
+        // Actualizar estado de los botones
+        buttons.forEach(btn => {
+            if (btn.getAttribute('data-filter') === category) {
+                btn.classList.add('bg-emerald-600', 'text-white', 'shadow-md');
+                btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+            } else {
+                btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+            }
+        });
+        
+        // Filtrar elementos con animación suave
+        items.forEach(item => {
+            if (category === 'todos' || item.getAttribute('data-category') === category) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 10);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+</script>
