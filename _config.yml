@@ -1,7 +1,7 @@
 title: "GARCIA LMI&kJ"
 email: "contacto@garcialmikj.com"
 description: "Servicios Profesionales de Mantenimiento de Jardines e Infraestructura. Ecatepec, Tecámac y alrededores."
-baseurl: ""
+baseurl: "/jardineria"
 url: "https://garcialmikj.com"
 
 markdown: kramdown
